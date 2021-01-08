@@ -5,6 +5,10 @@ class App extends Component {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text>Hello world</Text>
+        <Text>Hello world</Text>
+        <Text>Hello world 2</Text>
+        <Text>Hello world</Text>
+        <Text>Hello world</Text>
       </View>
     );
   }
