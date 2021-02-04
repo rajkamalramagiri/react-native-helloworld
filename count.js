@@ -1,26 +1,30 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 import {connect, useSelector, useDispatch} from 'react-redux';
+import {incrementCake} from './redux/cakeAction';
 import {increment} from './redux/countAction';
 
 function Count(props) {
-  const newCount = useSelector((state) => state.count);
+  const cakeCount = useSelector((state) => state.cake.count);
   const dispatch = useDispatch();
   return (
     <View>
       <Text>count {props.count}</Text>
-      <Text>count {newCount}</Text>
 
-      <Button title="increment" onPress={props.increment}></Button>
+      <Button title="increment count" onPress={props.increment}></Button>
       <Text></Text>
-      <Button title="increment" onPress={() => dispatch(increment())}></Button>
+      <Text> cake count {cakeCount}</Text>
+
+      <Button
+        title="increment cake"
+        onPress={() => dispatch(incrementCake())}></Button>
     </View>
   );
 }
 
 const mapStateToProps = (state) => {
   return {
-    count: state.count,
+    count: state.count.count,
   };
 };
 

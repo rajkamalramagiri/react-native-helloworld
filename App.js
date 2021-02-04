@@ -4,8 +4,9 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import Count from './count';
 import {countReducer} from './redux/countReducer';
+import rootReducer from './redux/rootReducer';
 
-const store = createStore(countReducer);
+const store = createStore(rootReducer);
 
 class App extends Component {
   render() {
